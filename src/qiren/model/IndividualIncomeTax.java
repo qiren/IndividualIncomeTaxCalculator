@@ -45,6 +45,7 @@ public class IndividualIncomeTax {
 		CityFactory concreteCity = new CityFactory();
 		this.fiveOneInsuranceFund = concreteCity.createCity(city).calculate(salary);
 		salaryCal = salaryCal - this.threshold - this.fiveOneInsuranceFund;
+		this.tax = 0;
 		for (int i = taxRate.length - 1; i >= 0; i--) {
 			if (salaryCal > this.level[i]) {
 				this.tax = salaryCal * this.taxRate[i] - this.quickDeduction[i];
